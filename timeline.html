@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>What Service Can I Access?</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+  </head>
+  <body>
+    <h1>"What Service Can I Access?"</h1>
+    <p>Use the interactive timeline below to find what services we can offer you</p>
+    <script>
+      var width = 1250;
+      var height = 150;
+      var margin = {top: 25, left: 25, right: 25, bottom: 25};
+
+      var svg = d3.select("body")
+        .append("svg")
+        .attr("width",width)
+        .attr("height",height);
+
+        var data = [
+          {x: 2, y: 90, w: 3, h: 25, t: "Hello, Worlds!"}
+        ];
+
+      var scale = d3.scaleLinear()
+        .domain([0,25])
+        .range([margin.left, width-margin.right]);
+
+      var axis = svg.append("g")
+        .attr("class","axis")
+        .attr("transform",`translate(0,${height-margin.bottom})`)
+        .call(d3.axisBottom().scale(scale).ticks(25));
+
+      var tooltip = d3.select("body")
+        .append("div")
+        .attr("class","tooltip")
+        .style("position","absolute")
+        .style("z-index","10")
+        .style("opacity",0);
+
+      var bar = svg.selectAll("rect")
+        .data(data)
+        .enter()
+        .append("rect")
+          .attr("class","bar")
+          .attr("x",function(d) { return scale(d.x); })
+          .attr("y", function(d) { return (d.y); })
+          .attr("width", function(d) { return scale(d.w-.5);})
+          .attr("height", function(d) { return (d.h);})
+          .attr("fill","#368557")
+          .attr("opacity",".65")
+          .attr("stroke","#12558f")
+          .attr("stroke-width","4")
+          .on("mouseover",function(d) {
+            d3.select(this)
+              .attr("opacity","1")
+              tooltip.transition()
+                .duration(300)
+                .style("opacity",".9")
+                .text(d.t)
+                ;})
+          .on("mouseout", function() {
+            d3.select(this)
+              .attr("opacity",".65");
+              tooltip.transition()
+              .duration(300)
+              .style("opacity","0")
+          });
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
