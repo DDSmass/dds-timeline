@@ -79,6 +79,9 @@ h4{
   font-weight: 600;
   font-style: italic;
   margin-left: 2vh;
+  border-style: solid;
+  border-color: #255b3b;
+  border-width: 0px;
 
   position: relative;
   display: flex;
@@ -89,6 +92,7 @@ h4{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
+
 
 .rightBox{
   position: relative;
