@@ -4,14 +4,41 @@
     <meta charset="utf-8">
     <title>What Services Can I Access?</title>
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="style-alt.css"/>
   </head>
   <body>
     <div id="header">
       <h1>"What Services Can I Access?"</h1>
-      <h4>Use the interactive timeline below to find what services we can offer you</h4>
+      <h4>Use the timeline below to find what services we can offer you.</h4>
     </div>
     <div id="chart"></div>
+    <div class="mobile">
+      <div class="column" id="left">
+        <div class="leftBox" id="left0">
+          <span>0-3</span>
+        </div>
+        <div class="leftBox" id="left1">
+          <span>3-10</span>
+        </div>
+        <div class="leftBox" id="left2">
+          <span>10-16</span>
+        </div>
+        <div class="leftBox" id="left3">
+          <span>16-20</span>
+        </div>
+        <div class="leftBox" id="left4">
+          <span>20-22</span>
+        </div>
+        <div class="leftBox" id="left5">
+          <span>22+</span>
+        </div>
+      </div>
+      <div class="column" id="right">
+        <div class="rightBox" id="right0">
+          <p></p>
+        </div>
+      </div>
+    </div>
     <script>
       var width = 1400;
       var height = 200;
@@ -21,17 +48,17 @@
         .append("svg")
         .attr("width","90%")
         .attr("height", "100%")
-        .attr("viewBox", "0 0 1450 1  200")
+        .attr("viewBox", "0 0 1500 200")
         .attr("preserveAspectRatio", "xMinYMin")
-        .style("margin-left","5%");
+        .style("margin-left","9%");
 
       var data = [
-        {x: 0, y: 85, w: 3, h: 25, c: "#c9e9d6", t: "The process walked the fine line between discovery and creation. The hiss of a knife across wood, the grainy feel of it grinding through coarse bark or the sleek slivering away at the rich insides, sometimes felt like an painter summoning an image through his pigments and sometimes felt like the path of a great explorer as she makes her way through a dense forest. It didn’t matter that he knew his hand was the thing responsible for the carving, the sculpting, the act of making something from the wood before him, as often as not it felt as if his hand was being tugged down a path that had been laid out for it."},
-        {x: 3, y: 85, w: 7, h: 25, c: "#a4dabb", t: "For instance, the stool he was now carving from the elder tree that had started growing in the corner of his workshop. It was covered in dancing figures, little fauns and dryads, hand in hand circling a leg, or a woman in a shimmering gown dancing across the stars.He did not furnish his house with these kinds of elaborate decorations. Gentle curves and looping whorls and bulbous legs like droplets of frozen candlewax falling down a string were the kinds of decorations he had on his furniture. This stool said that it needed these dances. He could tell when he had first touched its bark."},
-        {x: 10, y: 85, w: 6, h: 25, c: "#80cba0", t: "And, of course, the stool would not be for him. He wasn’t quite sure who it would be for — who would want such a decorative piece of furniture — but he knew with as much certainty as it was supposed to have a pair of tangoing rabbits dancing around the rim of the seat that someone would come and it would be exactly what they would need. After all, that was how all this worked."},
-        {x: 16, y: 85, w: 4, h: 25, c: "#5cbc84", t: "It hadn’t begun with a whole tree. It had started when it had been his father’s workshop, not his own. His father, who was a masterful carver who never seemed to manage to sell a single thing, an artist who could make and make and make but it was always what he wanted to see in the world, and never what the world wanted to see from him. Back in those days he had wandered into the workshop one day and found a chunk of wood, left over from one of his father’s projects, sitting forgotten in the same corner where the elder tree grew now. As soon as he touched it, he had the unrelenting urge to take a tool to it and carve it into a little toy boat."},
-        {x: 20, y: 85, w: 2, h: 25, c: "#43a36b", t: "He had never shown any interest or talent in following in his father’s footsteps before, never had suggested that he take up an apprenticeship under his father’s hand and eye, yet as soon as he was finished there was no doubt. It was the most charming little boat any of them had ever seen."},
-        {x: 22, y: 85, w: 3, h: 25, c: "#368557", t: "What was more, that evening, the woman next door, whose belly had long been heavy with the weight of a growing child gave birth to a girl. Upon seeing the boat in the young woodcarver’s hand, the newborn’s eyes grew so wide and so bright each one looked like a full moon. He handed the boat to her, and as it passed from his hand for a moment the whole world around him felt perfectly in balance. Years had passed, and each time he picked up his tools and went to a block of a wood he could see exactly what it should look like, and came to know without a single twinge of doubt that someone would come for it shortly thereafter."}
+        {x: 0, y: 85, w: 3, h: 25, c: "#c9e9d6", m: "tb0", t: "The process walked the fine line between discovery and creation. The hiss of a knife across wood, the grainy feel of it grinding through coarse bark or the sleek slivering away at the rich insides, sometimes felt like an painter summoning an image through his pigments and sometimes felt like the path of a great explorer as she makes her way through a dense forest. It didn’t matter that he knew his hand was the thing responsible for the carving, the sculpting, the act of making something from the wood before him, as often as not it felt as if his hand was being tugged down a path that had been laid out for it."},
+        {x: 3, y: 85, w: 7, h: 25, c: "#a4dabb", m: "tb1", t: "For instance, the stool he was now carving from the elder tree that had started growing in the corner of his workshop. It was covered in dancing figures, little fauns and dryads, hand in hand circling a leg, or a woman in a shimmering gown dancing across the stars.He did not furnish his house with these kinds of elaborate decorations. Gentle curves and looping whorls and bulbous legs like droplets of frozen candlewax falling down a string were the kinds of decorations he had on his furniture. This stool said that it needed these dances. He could tell when he had first touched its bark."},
+        {x: 10, y: 85, w: 6, h: 25, c: "#80cba0", m: "tb2", t: "And, of course, the stool would not be for him. He wasn’t quite sure who it would be for — who would want such a decorative piece of furniture — but he knew with as much certainty as it was supposed to have a pair of tangoing rabbits dancing around the rim of the seat that someone would come and it would be exactly what they would need. After all, that was how all this worked."},
+        {x: 16, y: 85, w: 4, h: 25, c: "#5cbc84", m: "tb3", t: "It hadn’t begun with a whole tree. It had started when it had been his father’s workshop, not his own. His father, who was a masterful carver who never seemed to manage to sell a single thing, an artist who could make and make and make but it was always what he wanted to see in the world, and never what the world wanted to see from him. Back in those days he had wandered into the workshop one day and found a chunk of wood, left over from one of his father’s projects, sitting forgotten in the same corner where the elder tree grew now. As soon as he touched it, he had the unrelenting urge to take a tool to it and carve it into a little toy boat."},
+        {x: 20, y: 85, w: 2, h: 25, c: "#43a36b", m: "tb4", t: "He had never shown any interest or talent in following in his father’s footsteps before, never had suggested that he take up an apprenticeship under his father’s hand and eye, yet as soon as he was finished there was no doubt. It was the most charming little boat any of them had ever seen."},
+        {x: 22, y: 85, w: 3, h: 25, c: "#368557", m: "tb5", t: "What was more, that evening, the woman next door, whose belly had long been heavy with the weight of a growing child gave birth to a girl. Upon seeing the boat in the young woodcarver’s hand, the newborn’s eyes grew so wide and so bright each one looked like a full moon. He handed the boat to her, and as it passed from his hand for a moment the whole world around him felt perfectly in balance. Years had passed, and each time he picked up his tools and went to a block of a wood he could see exactly what it should look like, and came to know without a single twinge of doubt that someone would come for it shortly thereafter."}
         ];
 
       var scale = d3.scaleLinear()
@@ -51,7 +78,7 @@
         .style("width","80%")
         .style("height","45%")
         .style("margin-left","10%")
-        //.style("margin-top","-75px")
+        .style("margin-top","-2em")
         .text("The Department of Developmental Services generally works with adults over 22 years, but we offer some services for younger individuals. Scroll over different age ranges in the chart above to see what options we may be able to offer you.");
 
       var arrow = svg.selectAll("path")
@@ -87,10 +114,8 @@
               .attr("opacity",".65")
               .attr("stroke","#368557")
               .attr("stroke-width","1")
-              tooltip.transition()
-              .duration(300)
-              .text("The Department of Developmental Services generally works with adults over 22 years, but we offer some services for younger individuals. Scroll over different age ranges in the chart above to see what options we may be able to offer you.")
             });
+
     </script>
     <div id="footer"></div>
   </body>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:200,200i,300,300i,400,400i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,200i,300,300i,400,400i,600,600i&display=swap');
 
 body{
   font-family: Montserrat, Helvetica, Arial, sans-serif;
@@ -15,9 +15,9 @@ h1{
 
 h4{
   color: white;
-  font-size: 1em;
+  font-size: 1.25em;
   margin: 25px;
-  margin-left: 75px;
+  margin-left: 45px;
 }
 
 #header{
@@ -31,13 +31,14 @@ h4{
   position: fixed;
   left: 0;
   bottom: 0;
-  height: 25px;
+  height: 15px;
   background-color: #388557;
   border-style: solid none;
   border-width: thick;
   border-color: #388557;
   width: 100%;
   z-index: 10;
+  margin-top: 20px;
 }
 
 .tooltip{
@@ -54,9 +55,133 @@ h4{
 
 .axis{
   font-family: Montserrat, Helvetica, Arial, sans-serif;
+  font-size: 1em;
   .color: grey;
 }
 
-#chart{
+.column{
+  display: none;
+}
+
+.mobile{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.leftBox{
+  height: 25vh;
+  width:100%;
+  color: white;
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 600;
+  font-style: italic;
+  margin-left: 2vh;
+
+  position: relative;
+  display: flex;
+  flex: 1 0 50%;
+  flex-direction: column;
+  padding: 25px;
+  box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.rightBox{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+#right0{
+  background: #eee;
+  box-shadow: 0 0 5px #999999;
+  color: #333;
+  font-size: 12px;
+  padding: 10px;
+  text-align: center;
+  height: 85vh;
+  margin-top: 3.5vh;
+  width:92%;
+  margin-left: 6%;
+
+  z-index: -100;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 6vh;
+  flex: 1 0 50%;
+  box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+span{
+  margin-top: 5vh;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#left0{
+  background-color: #c9e9d6;
+}
+
+#left1{
+  background-color: #a4dabb;
+}
+
+#left2{
+  background-color: #80cba0;
+}
+
+#left3{
+  background-color: #5cbc84;
+}
+
+#left4{
+  background-color: #43a36b;
+}
+
+#left5{
+  background-color: #368557;
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  #chart{
+  display: none;
+  }
+
+  h1{
+    font-size: 2em;
+  }
+
+  h4{
+    margin-left: 25px;
+    font-size: 1em;
+  }
+
+  .column{
+    display:block;
+    float: left;
+  }
+
+  #left{
+    width:35%;
+  }
+
+  #right{
+    width:65%
+  }
+
+}
+
+@media only screen and (max-width: 1000px) {
+  .axis{
+    font-size: 1.5em;
+  }
 
 }
