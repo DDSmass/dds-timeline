@@ -71,7 +71,7 @@ h4{
 }
 
 .leftBox{
-  height: 25vh;
+  height: 20vh;
   width:90%;
   color: white;
   text-align: center;
@@ -95,7 +95,7 @@ h4{
 
 
 span{
-  margin-top: 6.5vh;
+  margin-top: 3vh;
   display: inline-block;
   vertical-align: middle;
 }
