@@ -71,8 +71,6 @@
         .attr("transform",`translate(0,${margin.top})`)
         .call(d3.axisTop().scale(scale).ticks(25));
 
-      var axisCon = svg.select()
-
       var tooltip = d3.select("#chart")
         .append("div")
         .attr("class","tooltip")
