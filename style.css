@@ -20,6 +20,10 @@ h4{
   margin-left: 45px;
 }
 
+#mobileHeader{
+  display: none;
+}
+
 #header{
   background-color: #388557;
   border-style: solid none;
@@ -166,6 +170,14 @@ span{
   h4{
     margin-left: 25px;
     font-size: 1em;
+  }
+
+  #desktopHeader{
+    display: none;
+  }
+
+  #mobileHeader{
+    display: block;
   }
 
   .column{
