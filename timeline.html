@@ -8,40 +8,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <div id="header">
-      <h1>"What Services Can I Access?"</h1>
-      <h4 class="headerText" id=desktopHeader>Use the timeline below to find what services we can offer you.</h4>
-      <h4 class="headerText" id=mobileHeader>Select an age range below to find what services we can offer you.</h4>
-    </div>
-    <div id="chart"></div>
-    <div class="mobile">
-      <div class="column" id="left">
-        <div class="leftBox" id="left0">
-          <span>Pre-birth</span>
+    <div id="container">
+      <div id="header">
+        <h1>"What Services Can I Access?"</h1>
+        <h4 class="headerText" id=desktopHeader>Use the timeline below to find what services we can offer you.</h4>
+        <h4 class="headerText" id=mobileHeader>Select an age range below to find what services we can offer you.</h4>
+      </div>
+      <div id="body">
+        <div id="chart"></div>
+        <div class="mobile">
+          <div class="column" id="left">
+            <div class="leftBox" id="left0">
+              <span>Pre-birth</span>
+            </div>
+            <div class="leftBox" id="left1">
+              <span>Birth-3</span>
+            </div>
+            <div class="leftBox" id="left2">
+              <span>3-18</span>
+            </div>
+            <div class="leftBox" id="left3">
+              <span>18-22</span>
+            </div>
+            <div class="leftBox" id="left4">
+              <span>22+</span>
+            </div>
+          </div>
+          <div class="column" id="right">
+            <div class="rightBox" id="right0">
+              <p id="mobileInfo">The Department of Developmental Services generally works with adults over 22 years, but we offer some services for younger individuals. Select different age ranges to see what options we may be able to offer you.</p>
+            </div>
+          </div>
         </div>
-        <div class="leftBox" id="left1">
-          <span>Birth-3</span>
-        </div>
-        <div class="leftBox" id="left2">
-          <span>3-18</span>
-        </div>
-        <div class="leftBox" id="left3">
-          <span>18-22</span>
-        </div>
-        <div class="leftBox" id="left4">
-          <span>22+</span>
+        <div class="tooltip">
+          <p id="tooltipText">The Department of Developmental Services generally works with adults over 22 years, but we offer some services for younger individuals. Scroll over different age ranges in the chart above to see what options we may be able to offer you.</p>
         </div>
       </div>
-      <div class="column" id="right">
-        <div class="rightBox" id="right0">
-          <p id="mobileInfo">The Department of Developmental Services generally works with adults over 22 years, but we offer some services for younger individuals. Select different age ranges to see what options we may be able to offer you.</p>
-        </div>
-      </div>
     </div>
-    <div class="tooltip">
-      <p id="tooltipText">The Department of Developmental Services generally works with adults over 22 years, but we offer some services for younger individuals. Scroll over different age ranges in the chart above to see what options we may be able to offer you.</p>
-    </div>
-    <div id="footer"></div>
     <script>
       var width = 1400;
       var height = 200;
