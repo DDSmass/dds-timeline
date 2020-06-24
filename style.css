@@ -65,7 +65,7 @@ h1{
 }
 
 .barText{
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: #ffffff;
   font-weight: 600;
   font-style: italic;
@@ -182,10 +182,10 @@ span{
   }
 
   #titleText{
-    font-size: 1.85em;
+    font-size: 1.25em;
   }
 
-  h4{
+  .headerText{
     margin-left: 25px;
     font-size: 1em;
   }
