@@ -215,4 +215,8 @@ span{
     display:none;
   }
 
+  .leftBox span{
+    font-size: 1.25rem;
+  }
+
 }
